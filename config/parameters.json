@@ -1,0 +1,4 @@
+{
+    "template.frame.directory.cache": "%application%/data/cache/frame",
+    "template.frame.php": true
+}

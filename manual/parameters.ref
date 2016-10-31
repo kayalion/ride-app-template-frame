@@ -1,0 +1,5 @@
+template.frame.directory.cache     Path to the cache directory
+template.frame.debug               Flag to see if debug is enabled (Defaults to false)
+template.frame.escape              Flag to see if auto escaping is enabled (Defaults to false)
+template.frame.php                 Allow php functions
+system.directory.view.frame        Relative path to the Frame view directory (Defaults to view/frame)

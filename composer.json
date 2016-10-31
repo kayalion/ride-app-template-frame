@@ -1,0 +1,22 @@
+{
+    "name": "ride/app-template-frame",
+    "description": "Frame template engine integration for a Ride application.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joris Vandeweerd",
+            "email": "joris@statik.be"
+        }
+    ],
+    "require": {
+        "ride/app": "^1.0.0",
+        "ride/app-template": "^1.0.0",
+        "ride/lib-log": "^1.0.0",
+        "ride/lib-template-frame": "^1.0.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "ride\\application\\cache\\control\\": ["src/"]
+        }
+    }
+}

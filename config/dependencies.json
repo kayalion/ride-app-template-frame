@@ -1,0 +1,157 @@
+{
+    "dependencies": [
+        {
+            "interfaces": "frame\\library\\resource\\TemplateResourceHandler",
+            "class": "ride\\library\\template\\engine\\FrameResourceHandler",
+            "id": "frame",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "system.directory.view.frame",
+                                "default": "view/frame"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": ["frame\\library\\TemplateContext" ,"frame\\library\\DefaultTemplateContext"],
+            "class": "frame\\library\\DefaultTemplateContext",
+            "id": "frame",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "resourceHandler",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "frame\\library\\resource\\TemplateResourceHandler",
+                                "id": "frame"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "setAllowPhpFunctions",
+                    "arguments": [
+                        {
+                            "name": "allowPhpFunctions",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "template.frame.php"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "setAutoEscape",
+                    "arguments": [
+                        {
+                            "name": "format",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "template.frame.escape",
+                                "default": false
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "setFunctions",
+                    "arguments": [
+                        {
+                            "name": "functions",
+                            "type": "dependencies",
+                            "properties": {
+                                "interface": "frame\\library\\func\\TemplateFunction",
+                                "include": "frame"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": "frame\\library\\cache\\TemplateCache",
+            "class": "frame\\library\\cache\\DirectoryTemplateCache",
+            "id": "frame",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "directory",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "template.frame.directory.cache"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "frame\\library\\TemplateEngine",
+            "id": "frame",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "context",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "frame\\library\\TemplateContext",
+                                "id": "frame"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "setCache",
+                    "arguments": [
+                        {
+                            "name": "cache",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "frame\\library\\cache\\TemplateCache",
+                                "id": "frame"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "method": "setIsDebug",
+                    "arguments": [
+                        {
+                            "name": "isDebug",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "template.frame.debug",
+                                "default": false
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": ["ride\\library\\template\\engine\\Engine", "ride\\library\\template\\engine\\FrameEngine"],
+            "class": "ride\\library\\template\\engine\\FrameEngine",
+            "id": "frame"
+        }/*,
+        {
+            "interfaces": "ride\\application\\cache\\control\\CacheControl",
+            "class": "ride\\application\\cache\\control\\FrameCacheControl",
+            "id": "frame"
+        }
+        */
+    ]
+}
