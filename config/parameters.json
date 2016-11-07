@@ -1,4 +1,4 @@
 {
-    "template.frame.directory.cache": "%application%/data/cache/frame",
-    "template.frame.php": true
+    "template.huqis.directory.cache": "%application%/data/cache/huqis",
+    "template.huqis.php": true
 }

@@ -1,9 +1,9 @@
 {
     "dependencies": [
         {
-            "interfaces": "frame\\library\\resource\\TemplateResourceHandler",
-            "class": "ride\\library\\template\\engine\\FrameResourceHandler",
-            "id": "frame",
+            "interfaces": "huqis\\resource\\TemplateResourceHandler",
+            "class": "ride\\library\\template\\engine\\HuqisResourceHandler",
+            "id": "huqis",
             "calls": [
                 {
                     "method": "__construct",
@@ -12,8 +12,8 @@
                             "name": "path",
                             "type": "parameter",
                             "properties": {
-                                "key": "system.directory.view.frame",
-                                "default": "view/frame"
+                                "key": "system.directory.view.huqis",
+                                "default": "view/huqis"
                             }
                         }
                     ]
@@ -21,9 +21,9 @@
             ]
         },
         {
-            "interfaces": ["frame\\library\\TemplateContext" ,"frame\\library\\DefaultTemplateContext"],
-            "class": "frame\\library\\DefaultTemplateContext",
-            "id": "frame",
+            "interfaces": ["huqis\\TemplateContext" ,"huqis\\DefaultTemplateContext"],
+            "class": "huqis\\DefaultTemplateContext",
+            "id": "huqis",
             "calls": [
                 {
                     "method": "__construct",
@@ -32,8 +32,8 @@
                             "name": "resourceHandler",
                             "type": "dependency",
                             "properties": {
-                                "interface": "frame\\library\\resource\\TemplateResourceHandler",
-                                "id": "frame"
+                                "interface": "huqis\\resource\\TemplateResourceHandler",
+                                "id": "huqis"
                             }
                         }
                     ]
@@ -45,7 +45,7 @@
                             "name": "allowPhpFunctions",
                             "type": "parameter",
                             "properties": {
-                                "key": "template.frame.php"
+                                "key": "template.huqis.php"
                             }
                         }
                     ]
@@ -57,7 +57,7 @@
                             "name": "format",
                             "type": "parameter",
                             "properties": {
-                                "key": "template.frame.escape",
+                                "key": "template.huqis.escape",
                                 "default": false
                             }
                         }
@@ -70,8 +70,8 @@
                             "name": "functions",
                             "type": "dependencies",
                             "properties": {
-                                "interface": "frame\\library\\func\\TemplateFunction",
-                                "include": "frame"
+                                "interface": "huqis\\func\\TemplateFunction",
+                                "include": "huqis"
                             }
                         }
                     ]
@@ -79,9 +79,9 @@
             ]
         },
         {
-            "interfaces": "frame\\library\\cache\\TemplateCache",
-            "class": "frame\\library\\cache\\DirectoryTemplateCache",
-            "id": "frame",
+            "interfaces": "huqis\\cache\\TemplateCache",
+            "class": "huqis\\cache\\DirectoryTemplateCache",
+            "id": "huqis",
             "calls": [
                 {
                     "method": "__construct",
@@ -90,7 +90,7 @@
                             "name": "directory",
                             "type": "parameter",
                             "properties": {
-                                "key": "template.frame.directory.cache"
+                                "key": "template.huqis.directory.cache"
                             }
                         }
                     ]
@@ -98,8 +98,8 @@
             ]
         },
         {
-            "class": "frame\\library\\TemplateEngine",
-            "id": "frame",
+            "class": "huqis\\TemplateEngine",
+            "id": "huqis",
             "calls": [
                 {
                     "method": "__construct",
@@ -108,8 +108,8 @@
                             "name": "context",
                             "type": "dependency",
                             "properties": {
-                                "interface": "frame\\library\\TemplateContext",
-                                "id": "frame"
+                                "interface": "huqis\\TemplateContext",
+                                "id": "huqis"
                             }
                         }
                     ]
@@ -121,8 +121,8 @@
                             "name": "cache",
                             "type": "dependency",
                             "properties": {
-                                "interface": "frame\\library\\cache\\TemplateCache",
-                                "id": "frame"
+                                "interface": "huqis\\cache\\TemplateCache",
+                                "id": "huqis"
                             }
                         }
                     ]
@@ -134,7 +134,7 @@
                             "name": "isDebug",
                             "type": "parameter",
                             "properties": {
-                                "key": "template.frame.debug",
+                                "key": "template.huqis.debug",
                                 "default": false
                             }
                         }
@@ -143,14 +143,14 @@
             ]
         },
         {
-            "interfaces": ["ride\\library\\template\\engine\\Engine", "ride\\library\\template\\engine\\FrameEngine"],
-            "class": "ride\\library\\template\\engine\\FrameEngine",
-            "id": "frame"
+            "interfaces": ["ride\\library\\template\\engine\\Engine", "ride\\library\\template\\engine\\HuqisEngine"],
+            "class": "ride\\library\\template\\engine\\HuqisEngine",
+            "id": "huqis"
         }/*,
         {
             "interfaces": "ride\\application\\cache\\control\\CacheControl",
-            "class": "ride\\application\\cache\\control\\FrameCacheControl",
-            "id": "frame"
+            "class": "ride\\application\\cache\\control\\HuqisCacheControl",
+            "id": "huqis"
         }
         */
     ]
